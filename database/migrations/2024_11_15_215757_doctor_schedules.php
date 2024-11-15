@@ -13,13 +13,12 @@ return new class extends Migration
     {
         Schema::create('doctor_schedules', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('doctor_id')->constrained()->onDelete('cascade');
-            $table->tinyInteger('day_of_week'); // 1=Monday, 7=Sunday etc etc etc
+            $table->foreignId('doctor_id')->constrained('doctors')->onDelete('cascade');
+            $table->string('day'); // Ej: Lunes, Martes
             $table->time('start_time');
             $table->time('end_time');
             $table->timestamps();
         });
-
     }
 
     /**
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('doctor_schedules');
+        //
     }
 };
