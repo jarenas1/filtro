@@ -16,7 +16,7 @@ class Doctor extends Model
     use SoftDeletes;
 
     
-    protected $fillable = ['name', 'specialty_id'];
+    protected $fillable = ['name', 'email','phone','address','specialty_id'];
 
     public function specialty()
     {

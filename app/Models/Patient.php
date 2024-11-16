@@ -12,7 +12,7 @@ class Patient extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['name', 'email', 'user_id'];
+    protected $fillable = ['name', 'email', 'password', 'user_id'];
 
     public function user(): BelongsTo
     {
