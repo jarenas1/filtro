@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\DoctorController;
@@ -27,6 +28,7 @@ Route::middleware([
 
 Route::resource('doctors', DoctorController::class);
 Route::resource('specialties', SpecialtyController::class);
+Route::resource('appoiments', AppointmentController::class);
 
 use App\Http\Controllers\DoctorScheduleController;
 
