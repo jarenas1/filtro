@@ -28,6 +28,13 @@ Route::middleware([
 Route::resource('doctors', DoctorController::class);
 Route::resource('specialties', SpecialtyController::class);
 
+use App\Http\Controllers\DoctorScheduleController;
+
+Route::get('doctor_schedules/create/{doctor}', [DoctorScheduleController::class, 'create'])->name('doctor_schedules.create');
+Route::post('doctor_schedules/store/{doctor}', [DoctorScheduleController::class, 'store'])->name('doctor_schedules.store');
+
+
+
 
 
 Route::resource('patients', PatientController::class);

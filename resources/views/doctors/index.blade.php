@@ -25,8 +25,9 @@
                     <td>{{ $doctor->specialty->name }}</td>
                     <td>{{ $doctor->email }}</td>
                     <td>
-                        <a href="{{ route('doctors.edit', $doctor) }}">Edit</a>
-                        <form action="{{ route('doctors.destroy', $doctor) }}" method="POST" style="display:inline;">
+                        <a href="{{route('doctors.edit', $doctor) }}">Edit</a>
+                        <a href="{{route('doctor_schedules.create', $doctor) }}">Asignar turno</a>
+                        <form action="{{ route('doctors.destroy', $doctor) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit">Delete</button>
